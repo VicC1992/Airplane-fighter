@@ -10,7 +10,7 @@ body {
   display: flex;
   height: 100%;
   width: 100%;
-  background-image: url(images/sky.jpg);
+  background-image: url(sky.jpg);
   background-size: cover;
   background-position: 100%;
   margin: auto;
@@ -83,7 +83,7 @@ h2 {
   position: relative;
   margin: auto;
   border: solid rgb(135, 33, 33);
-  background-image: url(images/sky2.jpg);
+  background-image: url(sky2.jpg);
   background-size: cover;
   background-position: 100%;
   justify-content: center;
@@ -104,7 +104,7 @@ h2 {
 }
 
 .plane {
-  background-image: url(images/plane.png);
+  background-image: url(plane.png);
   background-size: cover;
   background-position: center;
   position: absolute;
@@ -128,7 +128,7 @@ h2 {
 }
 
 .asteroid {
-  background-image: url(images/asteroid.png);
+  background-image: url(asteroid.png);
   position: absolute;
   background-size: 50px;
   background-position: center;
@@ -147,7 +147,7 @@ h2 {
 }
 
 .bullet {
-  background-image: url(images/bullet.png);
+  background-image: url(bullet.png);
   background-size: 25px;
   background-repeat: no-repeat;
   background-position: center;
@@ -164,7 +164,7 @@ h2 {
 }
 
 .introDiv {
-  background-image: url(images/Lockheed-Martin-F35-illustration.jpg);
+  background-image: url(Lockheed-Martin-F35-illustration.jpg);
   background-size: cover;
   background-position: center;
   position: absolute;
@@ -213,7 +213,7 @@ h2 {
   height: 600px;
   width: 800px;
   position: absolute;
-  background-image: url(images/sg.jpg);
+  background-image: url(sg.jpg);
   background-size: cover;
   background-position: 100%;
   justify-content: center;
