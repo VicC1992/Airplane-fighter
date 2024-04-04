@@ -10,7 +10,7 @@ body {
   display: flex;
   height: 100%;
   width: 100%;
-  background-image: url(sky.jpg);
+  background-image: src="sky.jpg";
   background-size: cover;
   background-position: 100%;
   margin: auto;
