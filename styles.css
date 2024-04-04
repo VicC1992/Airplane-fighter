@@ -1,0 +1,222 @@
+html {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  overflow: hidden;
+}
+
+body {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  background-image: url(images/sky.jpg);
+  background-size: cover;
+  background-position: 100%;
+  margin: auto;
+}
+
+.pageDiv {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  justify-content: center;
+}
+
+.controls {
+  display: flex;
+  background-color: rgb(71, 72, 71);
+  height: 550px;
+  width: 320px;
+  border: solid rgb(135, 33, 33);
+  justify-content: center;
+  overflow: hidden;
+  margin: 200px;
+  margin-top: 155px;
+  margin: auto;
+}
+
+h2 {
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  color: rgb(245, 241, 241);
+  align-items: center;
+  font-size: 45px;
+}
+
+#keyUp,
+#keyDown,
+#keyLeft,
+#keyRight,
+#keyWide {
+  color: rgb(245, 241, 241);
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 20px;
+}
+
+.time,
+.landedAsteroids,
+.eliminatedAsteroids,
+.airplaneLife,
+.level {
+  color: rgb(245, 241, 241);
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 25px;
+}
+
+.score {
+  display: flex;
+  background-color: rgb(71, 72, 71);
+  height: 550px;
+  width: 320px;
+  border: solid rgb(135, 33, 33);
+  overflow: hidden;
+  justify-content: center;
+  margin: 200px;
+  margin-top: 155px;
+  margin: auto;
+}
+
+.gameDiv {
+  display: flex;
+  height: 600px;
+  width: 750px;
+  position: relative;
+  margin: auto;
+  border: solid rgb(135, 33, 33);
+  background-image: url(images/sky2.jpg);
+  background-size: cover;
+  background-position: 100%;
+  justify-content: center;
+  align-items: center;
+  background-repeat: repeat;
+  overflow: hidden;
+  animation: sky-animation 80s linear infinite;
+}
+
+@keyframes sky-animation {
+  from {
+    background-position: 0 0;
+  }
+
+  to {
+    background-position: 0 10000px;
+  }
+}
+
+.plane {
+  background-image: url(images/plane.png);
+  background-size: cover;
+  background-position: center;
+  position: absolute;
+  width: 65px;
+  height: 110px;
+  bottom: 1%;
+  left: 47%;
+  animation: fly 0.1s ease infinite;
+}
+
+@keyframes fly {
+
+  0%,
+  100% {
+    transform: translateY(-1px);
+  }
+
+  50% {
+    transform: translateY(1px);
+  }
+}
+
+.asteroid {
+  background-image: url(images/asteroid.png);
+  position: absolute;
+  background-size: 50px;
+  background-position: center;
+  top: 1%;
+  left: 50%;
+  height: 60px;
+  width: 60px;
+  border-radius: 100px;
+  animation: falling 10s linear infinite;
+}
+
+@keyframes falling {
+  to {
+    transform: translateY(105vh);
+  }
+}
+
+.bullet {
+  background-image: url(images/bullet.png);
+  background-size: 25px;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: absolute;
+  height: 50px;
+  width: 30px;
+  animation: flying 3s linear infinite;
+}
+
+@keyframes flying {
+  to {
+    transform: translateY(-105vh);
+  }
+}
+
+.introDiv {
+  background-image: url(images/Lockheed-Martin-F35-illustration.jpg);
+  background-size: cover;
+  background-position: center;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+
+.startButton {
+  height: 60px;
+  width: 120px;
+  position: absolute;
+  padding: 12px;
+  background-color: rgb(46, 207, 102);
+  color: white;
+  font-weight: 600;
+  text-align: center;
+  border-radius: 12px;
+  margin-top: 40%;
+}
+
+.restartButton {
+  height: 80px;
+  width: 120px;
+  position: absolute;
+  padding: 12px;
+  background-color: rgb(46, 207, 102);
+  color: white;
+  font-weight: 600;
+  text-align: center;
+  border-radius: 12px;
+  margin-top: 65%;
+}
+
+#hour,
+#minute,
+#second,
+#landedAsteroids,
+#eliminatedAsteroids,
+#airplaneLife,
+#level {
+  color: rgb(33, 227, 178);
+}
+
+.gameOver {
+  display: flex;
+  height: 600px;
+  width: 800px;
+  position: absolute;
+  background-image: url(images/sg.jpg);
+  background-size: cover;
+  background-position: 100%;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
