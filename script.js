@@ -3,7 +3,7 @@ let gameWindowRect = windowGame.getBoundingClientRect();
 let horizontalPositionPlane;
 let verticalPositionPlane;
 let gameInProcess = false;
-//crearea avionului
+//creation of the airplane
 function createPlane() {
     const plane = document.createElement("div");
     windowGame.appendChild(plane);
@@ -12,7 +12,7 @@ function createPlane() {
     plane.classList.add("plane");
     document.addEventListener("keydown", planeMove);
 }
-//manevrarea avionului
+//airplane handling
 let verticalPositionPlaneLimitUp = 1;
 let verticalPositionPlaneLimitDown = 81;
 let horizontalPositionPlaneLimitRight = 90;
@@ -34,11 +34,11 @@ function planeMove(e) {
         planeMove.style.top = `${verticalPositionPlane}%`;
     }
 }
-//generarea pozitii random pentru crearea de asteroizi
+//get random position of asteroids
 function getRandomPosition(min, max) {
     return Math.random() * (max - min) + min;
 }
-//crearea asteroizilor
+//creation of the asteroids
 let asteroidInterval;
 let speedCreationAsteriod = 3500;
 
@@ -51,7 +51,7 @@ function createAsteroid() {
         asteroidLanding(asteroid);
     }
 }
-//asteroizi evitati
+//avoided asteroids
 let landedAsteroids = 0;
 const levelSpan = document.getElementById("level");
 let spanLandedAsteroids = document.getElementById("landedAsteroids");
@@ -70,7 +70,7 @@ function asteroidLanding() {
         });
     }
 }
-//coliziunea intre asteroid si avion
+//the collision between the plane and the asteroids
 let damagePlane = 25;
 let airplaneLife = 100;
 let collisionPlaneAsteroidInterval;
@@ -90,10 +90,10 @@ function collisionPlaneAsteroid() {
                     gameOver();
                 }
             }
-        })
+        });
     }
 }
-//crearea munitiei
+//creating bullets
 function createBullet() {
     if (gameInProcess === true) {
         const bullet = document.createElement("div");
@@ -109,7 +109,7 @@ document.addEventListener("keydown", (e) => {
         createBullet();
     }
 });
-//eliminarea gloantelor ce depasesc fereastra jocului
+//removing bullets that have passed through the window
 setInterval(flewBullets, 100);
 
 function flewBullets() {
@@ -122,11 +122,11 @@ function flewBullets() {
     });
 }
 let level = 0;
-let nextLevel = 50;
+let nextLevelPoints = 50;
 let destroyedAsteroids = 0;
 const eliminatedAsteroids = document.getElementById("eliminatedAsteroids");
 const airplaneLifeSpan = document.getElementById("airplaneLife");
-//distrugerea asteroizilor
+//destruction of asteroids
 setInterval(collisionBulletAsteroid, 100);
 
 function collisionBulletAsteroid(bullet) {
@@ -140,18 +140,22 @@ function collisionBulletAsteroid(bullet) {
                 asteroid.remove();
                 bullet.remove();
                 ++destroyedAsteroids;
-                if (destroyedAsteroids === nextLevel && speedCreationAsteriod >= 500) {
-                    clearInterval(asteroidInterval);
-                    speedCreationAsteriod -= 200;
-                    nextLevel += 50;
-                    ++level;
-                    levelSpan.innerText = level;
-                    asteroidInterval = setInterval(createAsteroid, speedCreationAsteriod);
-                }
+                nextLevel();
                 eliminatedAsteroids.innerText = destroyedAsteroids;
             }
         });
     })
+}
+
+function nextLevel() {
+    if (destroyedAsteroids === nextLevelPoints && speedCreationAsteriod >= 500) {
+        clearInterval(asteroidInterval);
+        speedCreationAsteriod -= 200;
+        nextLevelPoints += 50;
+        ++level;
+        levelSpan.innerText = level;
+        asteroidInterval = setInterval(createAsteroid, speedCreationAsteriod);
+    }
 }
 //timer
 let hour = 0;
@@ -202,7 +206,7 @@ function timer() {
 function returnData(input) {
     return input > 10 ? input : `0${input}`
 }
-//creare fereastra intro
+//creating the intro window
 const pageContainer = document.getElementById("pageDiv");
 introGame();
 
@@ -217,7 +221,7 @@ function introGame() {
     startButton.addEventListener("click", startGame);
     startButton.addEventListener("click", start);
 }
-//start joc
+//start game
 let intro = document.querySelector(".introDiv");
 let startButton = document.querySelector(".startButton");
 
@@ -229,7 +233,7 @@ function startGame() {
     intro.style.visibility = "hidden";
     startButton.style.visibility = "hidden";
 }
-//stop joc
+//stop game
 function createGameOverDiv() {
     const gameOverDiv = document.createElement("div");
     windowGame.appendChild(gameOverDiv);
